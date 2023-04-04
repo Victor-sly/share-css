@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border2</title>
+    <style>
+        body {
+            padding: 100px;
+            background-color: #54524d;
+        }
+
+        /* .app {
+            width: 200px;
+            height: 100px;
+            border: 1px solid #fff;
+        } */
+
+
+        /* .app {
+            width: 200px;
+            height: 100px;
+        } */
+
+        /* 这里的重点是：1. 定位 position； 2. 伪元素::after、::before */
+        /* .app {
+            position: relative;
+            border: 1px solid #fff;
+        }
+        .app::before,
+        .app::after {
+            content: " ";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            transition: all .4s;
+        }
+        .app::before {
+            top: -6px;
+            left: -6px;
+            border-top: 1px solid #4eeb19;
+            border-left: 1px solid #4eeb19;
+        }
+        .app::after {
+            right: -6px;
+            bottom: -6px;
+            border-bottom: 1px solid #4eeb19;
+            border-right: 1px solid #4eeb19;
+        }
+        .app:hover::before,
+        .app:hover::after {
+            width: calc(100% + 11px);
+            height: calc(100% + 11px);
+        } */
+
+
+
+        /* 容器 */
+        .wrap {
+            width: 200px;
+            height: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* 模拟边框旋转 */
+        .wrap .border {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 240px;
+            height: 240px;
+            margin-left: -120px;
+            margin-top: -120px;
+            animation: 6s infinite linear rotate;
+            background: conic-gradient(from 45deg, #ffbe44 0deg 90deg, #5DADE2 90deg 180deg, #ee5732 180deg 270deg, #2ECC71 270deg 360deg);
+        }
+        /* 旋转动画 */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* 内容层 */
+        .wrap .content {
+            width: 192px;
+            height: 92px;
+            background-color: #54524d;
+            overflow: hidden;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<!-- <div class="app"></div> -->
+<div class="wrap">
+    <div class="border"></div>
+    <div class="content"></div>
+</div>
+
+
+
+</body>
+
+</html>

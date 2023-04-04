@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter 01</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+            width: 150px;
+        }
+
+        li img {
+            width: 100%;
+            object-fit: contain;
+        }
+
+        ul {
+            padding: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        li.blur img {
+            filter: blur(5px);
+        }
+        li.brightness img {
+            filter: brightness(2);
+        }
+        li.contrast img {
+            filter: contrast(200%);
+        }
+        li.drop-shadow img {
+            filter: drop-shadow(16px 16px 10px black);
+        }
+        li.grayscale img {
+            filter: grayscale(100%);
+        }
+        li.hue-rotate img {
+            filter: hue-rotate(90deg);
+        }
+        li.invert img {
+            filter: invert(100%);
+        }
+        li.opacity img {
+            filter: opacity(50%);
+        }
+        li.saturate img {
+            filter: saturate(200%);
+        }
+        li.sepia img {
+            filter: sepia(100%);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <ul>
+            <li>
+                <img src="./hua.jpg" alt="">
+                <span>原图</span>
+            </li>
+            <li class="blur">
+                <img src="./hua.jpg" alt="">
+                <span>blur(5px)</span>
+            </li>
+            <li class="brightness">
+                <img src="./hua.jpg" alt="">
+                <span>brightness(2)</span>
+            </li>
+            <li class="contrast">
+                <img src="./hua.jpg" alt="">
+                <span>contrast</span>
+            </li>
+            <li class="drop-shadow">
+                <img src="./hua.jpg" alt="">
+                <span>drop-shadow</span>
+            </li>
+            <li class="grayscale">
+                <img src="./hua.jpg" alt="">
+                <span>grayscale(100%)</span>
+            </li>
+            <li class="hue-rotate">
+                <img src="./hua.jpg" alt="">
+                <span>hue-rotate(90deg)</span>
+            </li>
+            <li class="invert">
+                <img src="./hua.jpg" alt="">
+                <span>invert(100%)</span>
+            </li>
+            <li class="opacity">
+                <img src="./hua.jpg" alt="">
+                <span>opacity(50%)</span>
+            </li>
+            <li class="saturate">
+                <img src="./hua.jpg" alt="">
+                <span>saturate(200%)</span>
+            </li>
+            <li class="sepia">
+                <img src="./hua.jpg" alt="">
+                <span>sepia(100%)</span>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

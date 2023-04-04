@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clip-path 02</title>
+</head>
+<style>
+    body {
+        padding: 100px;
+    }
+    ul,li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        font-size: 20px;
+        line-height: 38px;
+        cursor: pointer;
+    }
+    ul {
+        margin-top: 24px;
+    }
+    li:hover {
+        font-weight: 700;
+    }
+    img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .app {
+        width: 300px;
+        height: 300px;
+        padding: 24px;
+        background-color: #50585e;
+        color: #fff;
+        clip-path: circle(30px at 40px 40px);
+        transition: .3s all;
+    }
+
+    .app:hover {
+        clip-path: circle(300px);
+    }
+
+</style>
+
+<body>
+    <div class="app">
+        <div class="wrap">
+            <img src="menu.svg" alt="">
+            <ul>
+                <li>Mac</li>
+                <li>iPad</li>
+                <li>iPhone</li>
+                <li>Watch</li>
+                <li>AirPods</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+<script>
+  
+</script>
+
+</html>
