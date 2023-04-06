@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drop-shadow</title>
+    <style>
+        body {
+            padding: 100px;
+        }
+
+        /* demo 1 css START */
+        .text {
+            background: linear-gradient(to bottom, #fd1d1d 0%, #3f3ab4 100%);
+            font-size: 66px;
+            font-weight: 700;
+            /* 设置背景裁剪方式为文字的前景色。 */
+            -webkit-background-clip: text;
+            /* 指定文字填充色为透明 */
+            -webkit-text-fill-color: transparent;
+            /* 重点：文字阴影 */
+            filter: drop-shadow(0 8px 2px rgba(0, 0, 0, .6));
+        }
+
+        /* demo 1 css END */
+
+
+        /* demo 2 css START */
+        .bubble {
+            width: 200px;
+            height: 40px;
+            border: 1px solid #b2adad;
+            border-radius: 8px;
+            position: relative;
+            filter: drop-shadow(0 4px 4px rgba(0, 0, 0, .6));
+            background-color: #b2adad;
+        }
+
+        .bubble::before,
+        .bubble::after {
+            content: "";
+            border: 14px solid transparent;
+            border-top-color: #b2adad;
+            position: absolute;
+            bottom: -28px;
+            right: 20%;
+        }
+
+        .bubble::after {
+            border-top-color: #b2adad;
+            bottom: -26px;
+        }
+
+        /* demo 2 css END */
+
+
+        /* demo 3 css START */
+        svg {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+        }
+
+        .line {
+            fill: none;
+            stroke-width: 10;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+            stroke: #fff;
+            stroke-dasharray: 328 600;
+            animation: rotate 2s infinite linear;
+            --colorA: #f24983;
+            filter:
+                drop-shadow(0 0 2px var(--colorA)) drop-shadow(0 0 5px var(--colorA)) drop-shadow(0 0 10px var(--colorA)) drop-shadow(0 0 15px var(--colorA)) drop-shadow(0 0 25px var(--colorA));
+        }
+
+        .line2 {
+            animation: rotate 2s infinite -1s linear;
+            --colorA: #37c1ff;
+        }
+
+        @keyframes rotate {
+            0% {
+                stroke-dashoffset: 0;
+            }
+
+            100% {
+                stroke-dashoffset: 925;
+            }
+        }
+        /* demo 3 css END */
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <!-- demo 1 html START -->
+        <div class="text">小红书</div>
+        <!-- demo 1 html END -->
+
+        <!-- demo 2 html START -->
+        <div class="bubble"></div>
+        <!-- demo 2 html END -->
+
+        <!-- demo 3 html START -->
+        <svg xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M 400 160 A 2 2 90 0 0 260 160 A 2 2 90 0 0 120 160 C 120 230 197 292 260 350 C 323 293 400 230 400 160"
+                class="line" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M 400 160 A 2 2 90 0 0 260 160 A 2 2 90 0 0 120 160 C 120 230 197 292 260 350 C 323 293 400 230 400 160"
+                class="line line2" />
+        </svg>
+        <!-- demo 3 html END -->
+
+    </div>
+</body>
+
+</html>
