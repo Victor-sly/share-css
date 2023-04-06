@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter 突出展示</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    ul {
+        width: 900px;
+        margin: 40px auto;
+        display: flex;
+        gap: 16px;
+    }
+
+    ul li {
+        position: relative;
+        list-style: none;
+        width: 240px;
+        height: 300px;
+        padding: 16px;
+        overflow: hidden;
+        color: #fff;
+        border-radius: 8px;
+    }
+
+    li.item1::before {
+        background: url(./img/j1.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    li.item2::before {
+        background: url(./img/j2.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    li .title {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    li .desc {
+        font-size: 16px;
+    }
+
+    li::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        transition: all .4s;
+        filter: blur(5px) opacity(.8);
+    }
+    /* 鼠标悬浮改变图像饱和度 & 放大图片 */
+    li:hover::before {
+        filter: saturate(200%);
+        transform: scale(1.1);
+    }
+
+    /* 对比图样式 */
+    .compare {
+        width: 240px;
+        padding: 0;
+    }
+    .compare img {
+        width: 100%;
+        object-fit: contain;
+        
+    }
+</style>
+
+<body>
+    <div class="app">
+        <ul>
+            <li class="item1">
+                <div class="title">Grassland</div>
+                <div class="desc">grassland at night</div>
+            </li>
+            <li class="item2">
+                <div class="title">Mountain</div>
+                <div class="desc">snow mountain at night</div>
+            </li>
+        </ul>
+        <ul>
+            <li class="compare"><img src="./img/j1.jpg" alt=""></li>
+            <li class="compare"><img src="./img/j2.jpg" alt=""></li>
+        </ul>
+
+    </div>
+</body>
+
+</html>
