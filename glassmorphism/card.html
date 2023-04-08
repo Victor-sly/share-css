@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to right, rgb(186, 183, 228), rgba(242, 133, 133));
+    }
+
+    .card {
+        position: relative;
+        width: 450px;
+        height: 280px;
+        padding: 24px;
+        border-radius: 20px;
+        background: linear-gradient(to right bottom,
+                rgba(255, 255, 255, .6),
+                rgba(255, 255, 255, .4),
+                rgba(255, 255, 255, .2));
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255, 255, 255, .8);
+        border-left: 1px solid rgba(255, 255, 255, .8);
+    }
+
+    .card .logo {
+        font-size: 36px;
+        font-weight: 700;
+        color: #a09292;
+        filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, .1));
+    }
+
+    .num,
+    .sign {
+        font-size: 28px;
+        font-family: menlo, tahoma;
+        text-shadow: 1px 1px 2px #666;
+        line-height: 18px;
+        color: rgba(255, 255, 255, .8);
+    }
+
+    .card .ad {
+        font-size: 90px;
+        font-weight: 500;
+        color: rgba(253, 222, 176, 0.8);
+        font-family: monospace, tahoma;
+        transform: rotate(-10deg);
+        transform-origin: 0;
+        padding-left: 80px;
+        margin: 10px 0 0;
+    }
+
+    .card .sign {
+        margin-top: 30px;
+        font-size: 22px;
+        color: rgba(255, 217, 217, .8);
+    }
+
+    .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0%;
+        width: 200px;
+        height: 200px;
+        background-color: rgba(0, 255, 255, .4);
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        z-index: -1;
+        animation: waterF 3s linear infinite forwards;
+    }
+
+    @keyframes waterF {
+        0% {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+        50% {
+            border-radius: 57% 43% 28% 72% / 66% 65% 35% 34%;
+        }
+        100% {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+    }
+
+</style>
+
+<body>
+
+    <div class="card">
+        <div class="logo">Logo</div>
+        <div class="ad">DESIGN</div>
+        <div class="num">8888&nbsp;8888&nbsp;8888&nbsp;8888</div>
+        <div class="sign">Victor</div>
+    </div>
+</body>
+
+
+</html>
