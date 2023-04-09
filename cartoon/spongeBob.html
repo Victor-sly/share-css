@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧽海绵宝宝</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: #FFF400;
+        }
+
+        /* 脸 */
+        .face {
+            position: relative;
+            height: 600px;
+            width: 600px;
+            margin: 0 auto;
+            margin-top: 5%;
+        }
+
+        /* 眼睛 */
+        .eyes_left,
+        .eyes_right {
+            position: absolute;
+            height: 190px;
+            width: 190px;
+            top: 18%;
+            background: white;
+            border-radius: 50%;
+            border: 5px solid black;
+        }
+
+        .eyes_left {
+            left: 20%;
+        }
+
+        .eyes_right {
+            right: 19%;
+        }
+
+        /* 眼睫毛 */
+        .eyelashes_1 {
+            position: absolute;
+            top: 15%;
+            left: 28%;
+            height: 5%;
+            width: 1.5%;
+            background: black;
+            transform: rotate(-12deg);
+            box-shadow: 160px 41px 0 black;
+        }
+
+        .eyelashes_2 {
+            position: absolute;
+            top: 13.4%;
+            left: 35%;
+            height: 5%;
+            width: 1.5%;
+            background: black;
+            box-shadow: 160px 2px 0 black;
+
+        }
+
+        .eyelashes_3 {
+            position: absolute;
+            top: 14.9%;
+            left: 42%;
+            height: 5%;
+            width: 1.5%;
+            background: black;
+            transform: rotate(12deg);
+            box-shadow: 160px -40px 0 black;
+
+        }
+
+        /* 外眼珠 */
+        .eyes_left::before,
+        .eyes_right::before {
+            content: "";
+            position: absolute;
+            height: 30%;
+            width: 30%;
+            top: 40%;
+            background: #0093DC;
+            border-radius: 50%;
+            border: 2px solid black;
+        }
+
+        .eyes_left::before {
+            left: 47%;
+        }
+
+        .eyes_right::before {
+            right: 47%;
+        }
+
+
+        /* 内眼珠 */
+        .eyes_left::after,
+        .eyes_right::after {
+            content: "";
+            position: absolute;
+            height: 15%;
+            width: 15%;
+            top: 48%;
+            background: black;
+            border-radius: 50%;
+        }
+
+        .eyes_left::after {
+            left: 55%;
+        }
+        .eyes_right::after {
+            right: 56%;
+        }
+
+        /* 鼻子 */
+        .nose {
+            position: absolute;
+            height: 114px;
+            width: 46px;
+            top: 30%;
+            left: 47%;
+            background: #FFF400;
+            border: 5px solid black;
+            border-bottom: 0;
+            border-radius: 45%;
+        }
+
+        /* 脸颊 */
+        .cheek_left,
+        .cheek_right {
+            position: absolute;
+            height: 8%;
+            width: 13%;
+            top: 42%;
+            background: #FFF400;
+            border: 2px solid transparent;
+            border-top: 5px solid #D9241C;
+            border-left: 4px solid #D9241C;
+            border-right: 4px solid #D9241C;
+            border-radius: 50%;
+        }
+
+        .cheek_left {
+            left: 14%;
+            transform: rotate(-12deg);
+        }
+
+        .cheek_right {
+            right: 14%;
+            transform: rotate(12deg);
+        }
+
+        .dot {
+            position: absolute;
+            height: 12%;
+            width: 7%;
+            background: #D9241C;
+            border-radius: 50%;
+            top: 60%;
+            left: 40%;
+        }
+
+        .cheek_left .dot::before,
+        .cheek_right .dot::before {
+            content: "";
+            position: absolute;
+            height: 5px;
+            width: 5px;
+            background: #D9241C;
+            border-radius: 50%;
+            top: -13px;
+            left: -10px;
+        }
+
+        .cheek_left .dot::after,
+        .cheek_right .dot::after {
+            content: "";
+            position: absolute;
+            height: 5px;
+            width: 5px;
+            background: #D9241C;
+            border-radius: 50%;
+            top: -14px;
+            left: 10px;
+        }
+
+        /* 嘴巴 */
+        .mouth {
+            position: absolute;
+            height: 50%;
+            width: 70%;
+            top: 13%;
+            left: 14%;
+            border: 2px solid transparent;
+            border-bottom: 5px solid black;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        /* 嘴角 */
+        .mouth_corner_left,
+        .mouth_corner_right {
+            position: absolute;
+            height: 10%;
+            width: 10%;
+            border: 1px solid transparent;
+            border-top: 5px solid black;
+            border-radius: 50%;
+        }
+
+        .mouth_corner_left {
+            top: 49.5%;
+            transform: rotate(-25deg);
+            left: 17%;
+        }
+
+        .mouth_corner_right {
+            top: 50%;
+            transform: rotate(25deg);
+            right: 18%;
+        }
+
+        /* 牙齿 */
+        .tooth-1,
+        .tooth-2 {
+            position: absolute;
+            height: 14%;
+            width: 8%;
+            background: white;
+            border: 5px solid black;
+            z-index: 1;
+        }
+
+        .tooth-1 {
+            top: 99.5%;
+            left: 41.5%;
+            transform: rotate(5deg);
+        }
+
+        .tooth-2 {
+            top: 99.5%;
+            left: 51%;
+            transform: rotate(-5deg);
+        }
+
+        /* 嘴唇 */
+        .lip::before,
+        .lip::after {
+            content: '';
+            position: absolute;
+            height: 15%;
+            width: 15%;
+            border: 2px solid transparent;
+            border-bottom: 8px solid #D9241C;
+            border-radius: 50%;
+            top: 62%;
+        }
+
+        .lip::before {
+            left: 36%;
+            transform: rotate(10deg);
+        }
+
+        .lip::after {
+            left: 48%;
+            transform: rotate(-10deg);
+        }
+
+        /* 脸上的洞 */
+        .hole {
+            position: absolute;
+            background: #D1C900;
+            border-radius: 50%;
+            height: 8%;
+            width: 8%;
+        }
+
+        .hole-1 {
+            top: 12%;
+        }
+
+        .hole-2 {
+            height: 10%;
+            width: 10%;
+            top: 5%;
+            right: 5%;
+        }
+
+        .hole-3 {
+            height: 7%;
+            width: 7%;
+            top: 38%;
+            right: 3%;
+        }
+
+        .hole-4 {
+            top: 58%;
+            right: 10%;
+        }
+
+        .hole-5 {
+            height: 6%;
+            width: 6%;
+            top: 58%;
+            left: 10%;
+        }
+
+        .hole-6 {
+            top: 78%;
+            left: 24%;
+        }
+
+        .hole-7 {
+            height: 5%;
+            width: 5%;
+            top: 80%;
+            right: 24%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 脸咯 -->
+    <div class="face">
+        <!-- 左眼 -->
+        <div class="eyes_left"></div>
+        <!-- 右眼 -->
+        <div class="eyes_right"></div>
+        <!-- 眼睫毛 -->
+        <div class="eyelashes_1"></div>
+        <div class="eyelashes_2"></div>
+        <div class="eyelashes_3"></div>
+        <!-- 鼻子 -->
+        <div class="nose"></div>
+        <!-- 左脸颊 -->
+        <div class="cheek_left">
+            <div class="dot"></div>
+        </div>
+        <!-- 右脸颊 -->
+        <div class="cheek_right">
+            <div class="dot"></div>
+        </div>
+        <!-- 嘴巴 -->
+        <div class="mouth">
+            <div class="tooth-1"></div>
+            <div class="tooth-2"></div>
+        </div>
+        <!-- 左嘴角 -->
+        <div class="mouth_corner_left"></div>
+        <!-- 右嘴角 -->
+        <div class="mouth_corner_right"></div>
+        <!-- 下巴 -->
+        <div class="lip"></div>
+        <!-- 脸上的洞 -->
+        <div class="hole hole-1"></div>
+        <div class="hole hole-2"></div>
+        <div class="hole hole-3"></div>
+        <div class="hole hole-4"></div>
+        <div class="hole hole-5"></div>
+        <div class="hole hole-6"></div>
+        <div class="hole hole-7"></div>
+    </div>
+
+</body>
+
+</html>
