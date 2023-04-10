@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小红书个人卡片</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+     
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(130deg, rgba(234, 62, 74, 1) 66%, rgba(255, 255, 255, 1) 100%);
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .wrap {
+            padding-top: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            width: 360px;
+            background: linear-gradient(to right bottom,
+                    rgba(255, 255, 255, .6),
+                    rgba(255, 255, 255, .4),
+                    rgba(255, 255, 255, .2));
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 30px;
+            border-top: 2px solid rgba(255, 255, 255, .8);
+            border-left: 2px solid rgba(255, 255, 255, .8);
+
+        }
+
+        .card::before {
+            content: "";
+            top: -160px;
+            left: -220px;
+            transform: rotate(30deg);
+            position: absolute;
+            display: block;
+            width: 30px;
+            height: 1000px;
+            background-color: #fff;
+            z-index: 9;
+            background: linear-gradient(to right, transparent, white, transparent);
+            animation: move .8s ease-in forwards;
+        }
+
+        .card .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: url(./img/avatar.jpg);
+            background-size: 100%;
+            margin: 0 auto;
+            filter: drop-shadow(2px 2px 20px rgba(0,0,0,.3));
+        }
+
+        .card .nicName {
+            margin-top: 24px;
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
+            color: #fff;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, .4);
+
+        }
+
+        .card .desc {
+            margin-top: 10px;
+            font-size: 16px;
+            color: rgba(255, 255, 255, .8);
+            text-align: center;
+        }
+
+        ul {
+            margin-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, .4);
+            padding-bottom: 30px;
+        }
+        ul li {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul li {
+            color: #fff;
+            flex: 1;
+        }
+
+        ul li>span:nth-child(1) {
+            font-weight: 700;
+            font-size: 19px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
+        }
+        ul li>span:nth-child(2) {
+            margin-top: 4px;
+            font-size: 14px;
+            opacity: .8;
+        }
+
+        .footer {
+            margin-top: 24px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer .logo {
+            border-radius: 8px;
+            background-color: #fff;
+            padding: 4px;
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            color: #e53f45;
+        }
+
+        .footer .num {
+            margin-top: 20px;
+            color: rgba(255, 255, 255, .5);
+        }
+
+        .footer .qrcode {
+            width: 100px;
+            height: 100px;
+            background: url(./img/qrcode.png) no-repeat center;
+            background-size: 92%;
+            background-color: rgba(255, 255, 255, 1);
+            border-radius: 8px;
+        }
+        @keyframes move {
+            from {
+                left: -220px;
+            }
+            to {
+                left: 600px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="card">
+            <div class="avatar"></div>
+            <div class="nicName">Victor</div>
+            <div class="desc">Front-end developert</div>
+            <ul>
+                <li>
+                    <span>66</span>
+                    <span>FOCUSON</span>
+                </li>
+                <li>
+                    <span>205</span>
+                    <span>FOLLOWERS</span>
+                </li>
+                <li>
+                    <span>1344</span>
+                    <span>LIKE</span>
+                </li>
+            </ul>
+            <div class="footer">
+                <div class="left">
+                    <div class="logo">小红书</div>
+                    <div class="num">小红书号：9699107142</div>
+                </div>
+                <div class="qrcode"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
