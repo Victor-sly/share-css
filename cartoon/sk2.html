@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神仙水～</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+        }
+        /* 瓶盖 */
+        .lid {
+            position: relative;
+            overflow: hidden;
+            width: 220px;
+            height: 200px;
+            background: linear-gradient(to right, rgba(0,0,0,.2), rgba(255,255,255,1), rgba(0,0,0,.2));
+            box-shadow: inset 1px 0 14px black;
+            border-radius: 50% 50% 4% 4% / 12%;
+            border-top: 2px solid rgba(0,0,0,.8);
+
+        }
+        /* 瓶盖两侧黑色阴影 */
+        .lid::before, .lid::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 6px;
+            background-color: rgba(0,0,0,.6);
+
+        }
+        .lid::before {
+            left: 4px;
+        }
+        .lid::after {
+            width: 10px;
+            right: 6px;
+            background-color: rgba(0,0,0,.9);
+        }
+        /* 瓶盖中间阴影 */
+        .lid .line {
+            width: 20px;
+            height: 100%;
+            background-color: rgba(0,0,0,1);
+            margin: 0 auto;
+        }
+        /* 增加中间阴影两侧亮度 */
+        .line::before, .line::after {
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,.4),rgba(255,255,255,1));
+            left: 60px;
+            filter: blur(10px) brightness(200%);
+        }
+
+        .line::after {
+            left: 119px;
+        }
+
+        /* 瓶身 */
+        .body {
+            position: relative;
+            overflow: hidden;
+            width: 220px;
+            height: 600px;
+            box-shadow: inset 2px 0 20px rgba(0, 0, 0, .6);
+            border-radius: 8% 8% 2% 2% / 4%;
+            background: linear-gradient(to right, rgba(246, 224, 224, 0.4), rgba(246, 224, 224, 0.8), rgba(246, 224, 224, 0.6));
+        }
+        /* 瓶口气泡 */
+        .bubble {
+            position: absolute;
+            top: -130px;
+            left: 30px;
+            width: 70%;
+            height: 180px;
+            border-radius: 10% 10% 50% 50% / 25%;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, .3));
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .4);
+            filter: blur(2px);
+        }
+
+        /* 模拟瓶身两侧高亮 */
+        .body::before,
+        .body::after {
+            content: "";
+            position: absolute;
+            height: 90%;
+            top: 50px;
+            width: 80px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .3) 50%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        .body::before {
+            left: 20px;
+        }
+
+        .body::after {
+            right: 20px;
+        }
+        /* logo名称 */
+        .name {
+            font-size: 70px;
+            font-weight: 700;
+            font-family: STSong;
+            color: #953d38;
+            margin: 80px 0 20px;
+            text-align: center;
+        }
+        /* logo下的文字 */
+        .text {
+            font-size: 18px;
+            text-align: center;
+            line-height: 24px;
+            color: rgba(0, 0, 0, .6);
+        }
+        /* 底部文字 */
+        .footer {
+            text-align: center;
+            font-size: 24px;
+            text-shadow: 1px 0 2px rgba(0, 0, 0, .4);
+            color: rgba(255, 255, 255, .8);
+            letter-spacing: 6px;
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        /* 模拟瓶底 */
+        .footer::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 60px;
+            width: 120px;
+            height: 10px;
+            background-color: #953d38;
+            border-radius: 30% / 50%;
+            background-color: rgba(255, 255, 255, .6);
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 瓶盖 -->
+        <div class="lid">
+            <div class="line"></div>
+        </div>
+        <!-- 瓶身 -->
+        <div class="body">
+            <div class="bubble"></div>
+            <div class="name">SK-II</div>
+            <div class="text">FACIAL</div>
+            <div class="text">TREATMENT</div>
+            <div class="text">ESSENCE</div>
+            <div class="footer">PITERA</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
