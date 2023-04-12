@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background基础</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            padding: 100px;
+        }
+
+        /* 简写 */
+        /* background: rebeccapurple url(./img/img.jpg) padding-box center/80% no-repeat fixed; */
+
+        .wrap {
+            width: 500px;
+            height: 500px;
+            /* border: 10px dotted black; */
+        }
+
+        /* 背景色 */
+        /* .wrap {
+            background-color: #000;
+        } */
+
+
+        /* 背景图 */
+        .wrap {
+            background-image: url(./img/pic1.jpg);
+        }
+
+        /* 背景相对原点区域 */
+        .wrap {
+            /* padding: 120px; */
+           
+            /* 默认值 */
+            /* background: url(./img/pic1.jpg) padding-box;  */
+            /* border-box */
+            /* background: url(./img/pic1.jpg) border-box;  */
+
+            /* contetn-box */
+            /* background: url(./img/pic1.jpg) content-box; */
+            /* border: 50px dotted #000; */
+        }
+        /* 背景相对位置 和 大小 */
+        /* .wrap {
+            background-position: 50% 50%;
+            background-size: 80%;
+        } */
+
+
+        /* 背景图片重复设置 */
+        .wrap {
+            /* border: 1px solid; */
+            /* background-size: 20%; */
+            /* background-repeat: repeat-x */
+            /* background-repeat: no-repeat; */
+        }
+
+
+        /* 设置背景图在视口内的滚动情况 */
+
+        .scroll {
+            width: 200px;
+            height: 200px;
+            overflow: auto;
+        }
+        .scroll p {
+            height: 500px;
+            background: url(./img/pic1.jpg) no-repeat center center/100%;
+            background-attachment: fixed;
+            /* background-attachment: scroll; */
+            /* background-attachment: local; */
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!-- <div class="wrap"> </div> -->
+
+    <div class="scroll">
+        <p>
+            我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，
+            我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，
+            我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，
+            我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，
+            我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，我是一段很长很长的文字，
+        </p>
+    </div>
+
+</body>
+
+</html>
