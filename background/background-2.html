@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background2</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* 1. 固定全屏背景 */
+        /* .wrap {
+            background: url(./img/bg1.heic) center/cover no-repeat;
+        } */
+
+        /* 2. 巧用reapeat */
+        /* .wrap {
+            background: url(./img/base.jpg) center/10% repeat;
+        } */
+
+        /* 3. 使用多个背景模拟列表滚动时顶部和底部阴影 */
+        .scroll {
+            margin: 100px auto;
+            width: 180px;
+            max-height: 200px;
+            overflow: auto;
+        }
+
+        .scroll li {
+            font-size: 18px;
+            line-height: 34px;
+            border-bottom: 1px solid #dbd0d0;
+            padding: 0 10px;
+        }
+
+        .scroll {
+            background:
+                linear-gradient(white 30%, rgba(255, 255, 255, 0)),
+                linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%,
+                radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)),
+                radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
+            background-repeat: no-repeat;
+            background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+            background-attachment: local, local, scroll, scroll;
+        }
+</style>
+</head>
+
+<body>
+    <!-- <div class="wrap"></div> -->
+    <div class="scroll">
+        <ul>
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+            <li>444</li>
+            <li>555</li>
+            <li>666</li>
+            <li>777</li>
+            <li>888</li>
+            <li>999</li>
+            <li>1010</li>
+        </ul>
+    </div>
+</body>
+
+</html>
