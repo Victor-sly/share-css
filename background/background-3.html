@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background 3</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+
+    .wrap {
+        padding-top: 300px;
+        width: 100vw;
+        height: 100vh;
+        font-size: 80px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    /* 使用动画和background-clip: text 渐变文字背景 */
+    /* .wrap {
+        background: linear-gradient(to right bottom, red, blue);
+        -webkit-background-clip: text;
+        color: transparent;
+    } */
+
+    /* 文字图片背景 */
+    /* .wrap {
+        padding-top: 400px;
+        background: url(./img/landscape.jpg) center/100% no-repeat;
+        -webkit-background-clip: text;
+        color: transparent;
+    } */
+
+    /* 文字夜市风 */
+    /* .wrap {
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: color .4s linear infinite;
+    }
+
+    @keyframes color {
+        0% {
+            background-image: linear-gradient(90deg, red 0, orange 15%, yellow 30%, green 45%, teal 60%, blue 75%, purple 90%, purple 100%);
+        }
+        50% {
+            background-image: linear-gradient(90deg, deeppink 0, yellowgreen 15%, fuchsia 30%, lime 45%, olive 60%, aqua 75%, coral 90%, brown 100%);
+        }
+        100% {
+            background-image: linear-gradient(-90deg, red 0, orange 15%, yellow 30%, green 45%, teal 60%, blue 75%, purple 90%, purple 100%);
+        }
+    } */
+
+
+    /* 加入动画让背景动起来 */
+    .wrap {
+        padding-top: 400px;
+        background: url(./img/landscape.jpg) center/100% no-repeat;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: move 3s infinite;
+
+    }
+
+    @keyframes move {
+        0% {
+            background-position: 0 0;
+        }
+        50% {
+            background-position: 100% 100%;
+        }
+        100% {
+            background-position: 0 0;
+        }
+    }
+</style>
+
+<body>
+    <!-- <div class="wrap">
+        薯友们，今天摸鱼了吗
+    </div> -->
+    <!-- <div class="wrap">
+        舌尖上的烧烤！！！
+    </div> -->
+    <div class="wrap">
+        LANDSCAPE
+    </div>
+
+</body>
+
+</html>
