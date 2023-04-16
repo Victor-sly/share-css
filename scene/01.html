@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    .wrap {
+        position: relative;
+        width: 647px;
+        height: 100vh;
+        margin: 0 auto;
+        background-image: url(./img/bg1.png);
+    }
+
+    .wrap::before,
+    .wrap::after {
+        content: "";
+        position: absolute;
+        top: 42px;
+        left: 19px;
+        width: 625px;
+        height: 810px;
+        background: url(./img/bg2.png) center/100% no-repeat;
+        z-index: -1;
+    }
+
+    .wrap::after {
+        width: 554px;
+        height: 766px;
+        left: 55px;
+        top: 210px;
+        background: url(./img/bg4.png) center/100% no-repeat;
+        z-index: -2;
+    }
+
+    .second {
+        opacity: 0;
+        position: absolute;
+        top: 94px;
+        height: 804px;
+        width: 625px;
+        background: url(./img/bg3.png) center/100% no-repeat;
+        transition: opacity .1s linear;
+    }
+
+    .second::before {
+        content: "";
+        position: absolute;
+        top: 80px;
+        left: 90px;
+        width: 35px;
+        height: 31px;
+        background: url(./img/hear.png) center/100% no-repeat;
+    }
+
+    .second img {
+        position: absolute;
+        top: 56px;
+        left: 240px;
+        width: 178px;
+        height: 46px;
+    }
+
+    .second .title {
+        position: absolute;
+        top: 100px;
+        left: 80px;
+        color: rgb(0, 0, 0);
+        font-family: "butter-subset12", "小可黄油体-subset12", "butter", "小可黄油体", Arial, SimSun, Sans-Serif;
+        font-size: 48px;
+        font-weight: 400;
+        text-align: center;
+        animation: titleScale .6s ease-out forwards;
+    }
+
+    @keyframes titleScale {
+        0% {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        60% {
+            opacity: .8;
+            transform: scale(1);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(0.74);
+        }
+    }
+
+    .three-3d {
+        transform-style: preserve-3d;
+
+    }
+
+    .three {
+        position: absolute;
+        top: 344px;
+        left: 42px;
+        width: 557px;
+        height: 433px;
+        background: url(./img/envelope.png) center/100% no-repeat;
+        transform: rotateY(-180deg);
+        animation: rotateY3d 1s ease-in-out forwards;
+        opacity: 0;
+    }
+
+    @keyframes rotateY3d {
+        to {
+            opacity: 1;
+            transform: rotateY(0);
+        }
+    }
+
+    .three .stamp {
+        position: absolute;
+        top: 150px;
+        left: 234px;
+        width: 105px;
+        height: 120px;
+        background: url(./img/yinni.png) center/100%;
+    }
+
+    .three .stamp::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: url(./img/yezi.png) center/76% no-repeat;
+    }
+
+    .three .stamp::after {
+        content: "点击开启信封";
+        width: 302px;
+        height: 70px;
+        position: absolute;
+        left: -98px;
+        top: 144px;
+        font-size: 28px;
+        line-height: 86px;
+        font-weight: 700;
+        text-align: center;
+        background: url(./img/jie.png) center/100% no-repeat;
+    }
+
+    .cat,
+    .dog-wrap {
+        opacity: 0;
+        transform: scale(0);
+        transform-origin: center center;
+        animation: animal .6s ease-in forwards .8s;
+    }
+    .dog-wrap {
+        transform-origin: center bottom;
+        animation: animal .4s ease-in forwards 1s;
+    }
+
+    .cat {
+        position: absolute;
+        top: 204px;
+        right: 0;
+        background: url(./img/cat.png) center/100% no-repeat;
+        width: 151px;
+        height: 164px;
+    }
+
+    .dog-wrap {
+        position: absolute;
+        top: 704px;
+        left: 34px;
+        z-index: 99;
+    }
+
+    .dog-wrap .dog {
+        background: url(./img/dog.png) center/100% no-repeat;
+        width: 150px;
+        height: 198px;
+    }
+
+    .dog-wrap .dog-bg {
+        position: absolute;
+        top: 130px;
+        left: 0;
+        width: 156px;
+        height: 103px;
+        z-index: -1;
+    }
+
+    @keyframes animal {
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+</style>
+
+<body>
+    <div class="wrap">
+        <div class="second">
+            <img src="./img/logo.png" alt="">
+            <div class="title">
+                叮，您有一封踏青邀请<br />请查收
+            </div>
+        </div>
+        <div class="cat"></div>
+        <div class="three-3d">
+            <div class="three">
+                <div class="stamp"></div>
+
+            </div>
+        </div>
+        <div class="dog-wrap">
+            <img class="dog" src="./img/dog.png" alt="">
+            <img class="dog-bg" src="./img/dog-bg.png" alt="">
+        </div>
+
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        const second = document.querySelector('.second');
+        second.style.opacity = 1;
+
+    }
+</script>
+
+</html>
