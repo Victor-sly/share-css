@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+    <style>
+
+        .wrap {
+            position: relative;
+            width: 600px;
+            height: 200px;
+            margin: 100px auto;
+            border: 1px solid #333;
+        }
+        .ball {
+            position: absolute;
+            top: 80px;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #4B1839;
+            /* 默认加速曲线ease */
+            /* transition: left 1s; */
+            /* ease-in 动画缓慢开始，逐渐加速直到结束 */
+            /* transition: left 1s ease-in; */
+            /* ease-out 以慢速结束 */
+            /* transition: left 1s ease-out; */
+            /* ease-in-out 缓慢开始、缓慢结束 */
+            transition: left 1s ease-in-out;
+        }
+
+        .wrap:hover .ball {
+            left: 550px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="ball"></div>
+    </div>
+</body>
+</html>
