@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            width: 600px;
+            height: 600px;
+            margin: 100px auto;
+            border: 1px dotted #000;
+            border-bottom: 0;
+            border-right: 0;
+            position: relative;
+
+        }
+
+        .wrap .app {
+            width: 100px;
+            height: 100px;
+            background-color: #5483FF;
+        }
+
+        /* translate */
+        .app {
+            /* transform: translate(100px); */
+            /* transform: translate(100px, 100px); */
+        }
+
+        /* scale */
+        .app {
+            /* transform: scale(0.5); */
+            /* transform: scale(1, 0.5); */
+        }
+        /* skew */
+        .app {
+            /* transform: skew(45deg); */
+            /* transform: skew(45deg, 15deg); */
+        }
+
+        /* rotate */
+        .app {
+            transform-origin: 0 0;
+            transform: rotate(45deg);
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="app"></div>
+    </div>
+</body>
+
+</html>
