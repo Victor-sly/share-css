@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform应用</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'AaMakeTi';
+            src: url('./AaMaKeTi-2.ttf');
+        }
+
+        .wrap {
+            width: 500px;
+            height: 200px;
+            margin: 100px auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            font-family: 'AaMakeTi';
+            color: #FFD93D;
+            color: #0A4D68;
+        }
+
+
+        /*设置背景颜色*/
+        body {
+            background-color: rgba(40, 134, 241, 0.925);
+        }
+
+        .drop {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            box-shadow: inset 10px 20px 30px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3), 15px 15px 30px rgba(0, 0, 0, 0.04),
+                inset -10px -10px 15px rgba(255, 255, 254, 0.83);
+            font-size: 44px;
+            text-align: center;
+            line-height: 200px;
+            transition: transform .4s;
+        }
+
+        .drop:nth-child(1) {
+            border-radius: 30% 70% 70% 30% / 30% 35% 65% 70%;
+            transform: scale(0) skew(45deg) translate(-300px);
+        }
+
+        .drop:nth-child(2) {
+            border-radius: 40% 60% 70% 30% / 30% 35% 65% 70%;
+            transform: scale(0) translate(300px);
+        }
+
+        .drop:nth-child(3) {
+            border-radius: 40% 40% 70% 30% / 30% 35% 65% 70%;
+            transform: scale(0) rotate(-180deg) translate(0, 400px);
+        }
+
+
+        /* 伪元素实现反光点 */
+        .drop::after {
+            content: "";
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.82);
+            border-radius: 50%;
+            left: 20px;
+            top: 55px;
+        }
+
+        /* 伪元素实现反光点 */
+        .drop::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.82);
+            border-radius: 50%;
+            left: 60px;
+            top: 30px;
+        }
+
+
+
+        .show .drop:nth-child(1) {
+            transition: transform .6s;
+            transform: scale(1) skew(0) translate(0);
+        }
+
+        .show .drop:nth-child(2) {
+            transition: transform 1s;
+            transform: scale(1) translate(0);
+        }
+        .show .drop:nth-child(3) {
+            transition: transform 1.2s;
+            transform: scale(1.1) rotate(0) translate(0);
+        }
+    </style>
+</head>
+
+<body>
+    <button>show</button>
+    <div class="wrap">
+        <div class="drop">点赞</div>
+        <div class="drop">收藏</div>
+        <div class="drop">关注</div>
+    </div>
+
+</body>
+<script>
+    window.onload = function() {
+        let isShow = false;
+        document.querySelector('button').onclick = function() {
+            const wrapDom = document.querySelector('.wrap');
+            const btnDom = document.querySelector('button');
+            if (!isShow) {
+                btnDom.innerHTML = 'show';
+                wrapDom.className+=' show';
+                isShow = true;
+            } else {
+                btnDom.innerHTML = 'hidden';
+                wrapDom.className ='wrap';
+                isShow = false;
+            }
+        }
+    }
+
+
+    window.onload = function() {
+        document.querySelector('button').onclick = function() {
+            const wrapDom = document.querySelector('.wrap');
+            wrapDom.className+=' show';
+        }
+    }
+
+</script>
+
+</html>
