@@ -30,12 +30,59 @@
         .face {
             position: relative;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(-20%);
             height: 600px;
             width: 600px;
             margin: 0 auto;
             text-align: center;
         }
+
+        /* 脑袋上的点点 */
+        .dot1, .dot2 {
+            position: absolute;
+            border-radius: 50%;
+            background-color: #90a59d;
+            top: -130px;
+            width: 10px;
+            height: 10px;
+            opacity: .5;
+        }
+        .dot1 {
+            left: -20px;
+        }
+        .dot2 {
+            right: -20px;
+        }
+
+        .dot1::before, .dot1::after {
+            content: "";
+            position: absolute;
+            top: -120px;
+            left: 80px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #90a59d;
+            filter: drop-shadow(400px 0 #90a59d);
+        }
+
+        .dot1::after {
+            top: -50px;
+            left: 100px;
+        }
+
+        .dot2::before {
+            content: "";
+            position: absolute;
+            top: -140px;
+            right: 340px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #90a59d;
+            filter: drop-shadow(10px 100px #90a59d);
+        }
+
 
         /* 抬头纹 */
         .wrinkle,
@@ -203,6 +250,9 @@
 
 <body>
     <div class="face">
+        <!-- 脑袋上的点点 -->
+        <div class="dot1"></div>
+        <div class="dot2"></div>
         <!-- 抬头纹 -->
         <div class="wrinkle"></div>
         <!-- 眼睛 -->
