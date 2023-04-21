@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: #e0e0e0;
+        }
+
+        .calc_wrap {
+            margin: 100px auto 0;
+            width: 388px;
+            border-radius: 20px;
+            box-shadow: 10px 10px 60px #bebebe;
+            padding: 30px;
+        }
+
+        .result {
+            height: 160px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding-bottom: 20px;
+            font-size: 42px;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        li {
+            list-style: none;
+            cursor: pointer;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            user-select: none;
+            color: #fff;
+            border-radius: 20px;
+            box-shadow: 6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
+
+        }
+
+
+        /* 前三个 */
+        li:nth-child(-n+3) {
+            color: rgba(0, 0, 0, .8);
+            background-color: rgba(255, 255, 255, .4);
+        }
+
+        li:nth-child(4n+4),
+        li:last-child {
+            color: #fff;
+            background-color: orange;
+        }
+
+        li:nth-child(17) {
+            flex: 1;
+            text-align: left;
+            padding-left: 28px;
+        }
+
+        li:active {
+            box-shadow: inset 4px 4px 12px #c5c5c5,
+             inset -4px -4px 12px #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calc_wrap">
+        <div class="result">1,314</div>
+        <div class="operate">
+            <ul>
+                <li>AC</li>
+                <li>+/-</li>
+                <li>%</li>
+                <li>÷</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>x</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>-</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>+</li>
+                <li>0</li>
+                <li>.</li>
+                <li>=</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
