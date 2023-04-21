@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪类选择器</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            margin: 100px auto;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 280px;
+            gap: 20px;
+        }
+
+        li {
+            list-style: none;
+            width: 80px;
+            height: 80px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, .4);
+            border-radius: 20px;
+            line-height: 80px;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        /* 选择第一个li */
+        /* li:first-child {
+            background-color: aqua;
+            color: #fff;
+        } */
+
+         li:nth-child(1) {
+            background-color: aqua;
+            color: #fff;
+        }
+
+        li:nth-last-child(1) {
+            background-color: aqua;
+            color: #fff;
+        } 
+
+        /* 选择最后一个li */
+        /* li:last-child {
+            background-color: blue;
+            color: #fff;
+        } */
+
+        /* 选择前5个元素 */
+        /* li:nth-child(-n+5) {
+            background-color: blue;
+            color: #fff;
+        } */
+        /* 选择偶数 */
+        /* li:nth-child(2n) {
+            background-color: blue;
+            color: #fff;
+        } */
+        /* 选择奇数 */
+        /* li:nth-child(2n+1) {
+            background-color: pink;
+            color: #fff;
+        } */
+
+        /* 选择3的倍数 */
+        /* li:nth-child(3n+3) {
+            background-color: blue;
+            color: #fff;
+        } */
+
+        /* 选择4-9 */
+        /* li:nth-child(n+4):nth-child(-n+9) {
+            background-color: blue;
+            color: #fff;
+        } */
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+    </ul>
+</body>
+
+</html>
