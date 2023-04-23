@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标悬浮3d卡片</title>
+    <style>
+        :root {
+            --card-height: 300px;
+            --card-width: calc(var(--card-height) / 1.5);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #191c29;
+        }
+
+        /* 卡片整体样式 */
+        .card {
+            position: relative;
+            perspective: 2500px;
+            width: var(--card-width);
+            height: var(--card-height);
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            padding: 36px;
+            margin: 0 50px;
+        }
+
+        /* 底图样式 */
+        .wrapper {
+            transition: all 0.5s;
+            position: absolute;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .wrapper>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* 标题图样式 */
+        .title {
+            width: 100%;
+            transition: transform 0.5s;
+        }
+
+        /* 覆盖层图片初始样式 */
+        .character {
+            width: 100%;
+            position: absolute;
+            opacity: 0;
+            transition: all 0.5s;
+            /* z-index: -1; */
+        }
+
+        /* 鼠标悬浮背景图旋转 */
+        .card:hover .wrapper {
+            transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+            box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+        }
+        /* 鼠标悬标题图片上移放大 */
+        .card:hover .title {
+            transform: translate3d(0%, -50px, 100px);
+        }
+        /* 鼠标悬覆盖层显示、上移、放大 */
+        .card:hover .character {
+            opacity: 1;
+            transform: translate3d(0%, -30%, 100px);
+        }
+
+        /* 伪元素覆盖图片上下两部分，制造阴影 */
+        .wrapper::before,
+        .wrapper::after {
+            content: "";
+            opacity: 0;
+            width: 100%;
+            height: 80px;
+            transition: all 0.5s;
+            position: absolute;
+            left: 0;
+        }
+
+        .wrapper::before {
+            top: 0;
+            height: 100%;
+            background-image: linear-gradient(to top,
+                    transparent 46%,
+                    rgba(12, 13, 19, 0.5) 68%,
+                    rgba(12, 13, 19) 97%);
+        }
+
+        .wrapper::after {
+            bottom: 0;
+            opacity: 1;
+            background-image: linear-gradient(to bottom,
+                    transparent 46%,
+                    rgba(12, 13, 19, 0.5) 68%,
+                    rgba(12, 13, 19) 97%);
+        }
+
+        .card:hover .wrapper::before,
+        .wrapper::after {
+            opacity: 1;
+        }
+
+        .card:hover .wrapper::after {
+            height: 120px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="wrapper">
+            <img src="./img/dark_rider-cover.jpg" />
+        </div>
+        <img src="./img/dark_rider-title.png" class="title" />
+        <img src="./img/dark_rider-character.webp" class="character" />
+    </div>
+
+    <div class="card">
+        <div class="wrapper">
+            <img src="./img/force_mage-cover.jpg" />
+        </div>
+        <img src="./img/force_mage-title.png" class="title" />
+        <img src="./img/force_mage-character.webp" class="character" />
+    </div>
+</body>
+
+</html>
