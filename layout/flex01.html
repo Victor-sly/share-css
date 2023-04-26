@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex 基础篇</title>
+    <style>
+
+        ul {
+            display: flex;
+            width: 340px;
+            /* height: 340px; */
+            margin: 100px auto;
+            gap: 10px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+            padding: 24px;
+            /* 控制换行 */
+            /* 第一行在上面 */
+            /* flex-wrap: wrap; */
+            /* 第一行在下面 */
+            flex-wrap: wrap-reverse;
+            /* 主轴对其方式 */
+            /* justify-content: center; */
+            /* 交叉轴对其方式 */
+            /* align-items: center; */
+        }
+        li {
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            
+        }
+
+        li:nth-child(1) {
+            background-color: #B2A4FF;
+        }
+        li:nth-child(2) {
+            background-color: #FFB4B4;
+        }
+        li:nth-child(3) {
+            background-color: #FFDEB4;
+        }
+        li:nth-child(4) {
+            background-color: #FDF7C3;
+        }
+        li:nth-child(5) {
+            background-color: #BBD6B8;
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+</html>
