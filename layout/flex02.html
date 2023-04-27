@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex 基础篇</title>
+    <style>
+
+        ul {
+            display: flex;
+            height: 240px;
+            width: 540px;
+            margin: 100px auto;
+            gap: 10px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+            padding: 24px;
+            
+        }
+        li {
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 60px;
+            font-weight: 700;
+            line-height: 100px;
+            text-align: center;
+            flex-grow: 1;
+            
+        }
+
+        li:nth-child(1) {
+            background-color: #B2A4FF;
+        }
+        li:nth-child(2) {
+            background-color: #FFB4B4;
+            /* 控制项目放大 */
+            /* flex-grow: 1; */
+
+        }
+        li:nth-child(3) {
+            background-color: #FFDEB4;
+            /* 改变项目的顺序，值越小，越靠前 */
+            /* order: -1; */
+            /* 改变单个项目的对其方式 */
+            align-self: center;
+        }
+        li:nth-child(4) {
+            background-color: #FDF7C3;
+            /* 控制项目缩小 */
+            /* flex-shrink: 0; */
+        }
+        li:nth-child(5) {
+            background-color: #BBD6B8;
+            align-self: flex-end;
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+
+</html>
