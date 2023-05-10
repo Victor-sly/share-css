@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒影</title>
+    <style>
+        .wrap {
+            width: 400px;
+            margin: 400px auto;
+            -webkit-box-reflect: below -11px linear-gradient(transparent, transparent 20%, rgba(255, 255, 255, 0.8));
+            /* 向上反射 */
+            /* -webkit-box-reflect: above; */
+            /* 向下反射 */
+            /* -webkit-box-reflect: below; */
+            /* 向右反射且偏移20px */
+            /* -webkit-box-reflect: right 20px; */
+
+            /* 向下反射且反向偏移12px */
+            /* -webkit-box-reflect: below -12px; */
+
+        }
+
+        .wrap img {
+            width: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <img src="./img/img_08.jpeg" alt="">
+    </div>
+</body>
+
+</html>
