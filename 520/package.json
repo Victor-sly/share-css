@@ -1,0 +1,17 @@
+{
+  "name": "520",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "postcss-px-to-viewport": "^1.1.1",
+    "sass": "^1.62.1",
+    "vite": "^4.3.6"
+  }
+}
