@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣诞老人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .app {
+            background-color: #d32f2fa6;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .wrap {
+            display: table;
+            margin: 0 auto;
+            max-width: 500px;
+            position: relative;
+            z-index: 99;
+        }
+
+        /* 头顶部分 */
+        .wrap .hat {
+            position: relative;
+            width: 310px;
+            z-index: 99;
+        }
+
+        .wrap .hat::before {
+            box-shadow: 20px 20px 40px -5px rgba(1, 1, 1, 0.3);
+            height: 80px;
+            left: -120px;
+            position: absolute;
+            top: 80px;
+            width: 80px;
+            z-index: 111;
+            border-radius: 50%;
+            background-color: #fff;
+            content: " ";
+            display: block;
+        }
+
+        .wrap .hat::after {
+            box-shadow: 0px -15px 40px -5px rgba(1, 1, 1, 0.4);
+            height: 80px;
+            margin-left: -15px;
+            position: relative;
+            width: 340px;
+            border-radius: 0.8em;
+            background-color: #fff;
+            content: " ";
+            display: block;
+        }
+
+        .hat .part-1 {
+            background-color: #D32F2F;
+            border-top: 0px solid transparent;
+            border-right: 340px solid #D32F2F;
+            border-bottom: 100px solid transparent;
+            border-color: transparent;
+            box-shadow: -25px 15px 30px -5px rgba(1, 1, 1, 0.3);
+            position: relative;
+            left: -56px;
+            top: 49px;
+            transform: rotate(-15deg);
+            border-radius: 30% 100% 0 100%;
+        }
+
+        .hat .part-2 {
+            border-left: 50px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 70px solid #D32F2F;
+        }
+
+
+        /* 脸 */
+        .wrap .face {
+            background-color: #ffccbc;
+            box-shadow: 0px 0px 30px 5px rgba(1, 1, 1, 0.3);
+            height: 130px;
+            position: relative;
+            top: -10px;
+            width: 300px;
+            border: 1px solid transparent;
+            margin: 0 auto;
+        }
+
+        /* 脸 - 耳朵 */
+        .wrap .face::before {
+            content: "";
+            background-color: #eea2ad;
+            position: absolute;
+            width: 330px;
+            height: 60px;
+            z-index: -1;
+            margin: 0 auto;
+            left: -15px;
+            top: 16px;
+            box-shadow: 0px 0px 20px 10px rgba(1, 1, 1, .1);
+            border-radius: 1em 1em 2em 2em;
+        }
+
+        /* 脸 - 眼睛 */
+        .face .eyes {
+            height: 0px;
+            margin: 20px auto 0;
+            max-width: 160px;
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .face .eyes::before,
+        .face .eyes::after {
+            background-color: #111;
+            content: " ";
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+        }
+
+        /* 脸 - 鼻子 */
+        .face .nose {
+            background-color: #EEA2AD;
+            height: 50px;
+            margin: 0 auto;
+            position: relative;
+            width: 70px;
+            z-index: 111;
+            border-radius: 50%;
+        }
+
+        /* 脸 - 嘴巴 */
+        .face .beard {
+            background-color: #ecf0f1;
+            box-shadow: -10px 10px 10px -5px rgba(1, 1, 1, 0.3);
+            height: 240px;
+            margin: 0 auto;
+            position: relative;
+            top: -30px;
+            width: 340px;
+            left: -20px;
+            transform: rotate(-20deg);
+            border-radius: 0% 100% 70% 100%;
+            animation: animateBeard 1.6s ease-in-out infinite alternate;
+        }
+
+        @keyframes animateBeard {
+            to {
+                transform: rotate(-10deg);
+            }
+        }
+
+        .face .beard .mouth {
+            height: 50px;
+            left: 30px;
+            margin: 0 auto;
+            position: relative;
+            top: 20px;
+            width: 60px;
+            border-radius: 50%;
+            animation: animateTeeth 1.6s ease-in-out infinite alternate;
+        }
+
+        @keyframes animateTeeth {
+            0% {
+                background-color: #ecf0f1;
+                box-shadow: 0px 20px 0 0 #111;
+                height: 40px;
+                width: 60px;
+            }
+
+            60% {
+                background-color: #ecf0f1;
+                box-shadow: 0px 60px 0 0 #111;
+                height: 60px;
+                width: 30px;
+            }
+
+            80% {
+                background-color: #ecf0f1;
+                box-shadow: 0px 60px 0 0 #111;
+                height: 50px;
+                width: 40px;
+            }
+
+            100% {
+                background-color: #ecf0f1;
+                box-shadow: 0px 60px 0 0 #111;
+                height: 60px;
+                width: 30px;
+            }
+        }
+
+        /* 下雪 */
+        .snow {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            pointer-events: none;
+            transform: translate3d(0, -100%, 0);
+            animation: snow linear infinite;
+        }
+
+        .snow.foreground {
+            background-image: url(./imgs/foreground.png);
+            animation-duration: 15s;
+        }
+
+        .snow.foreground.layered {
+            animation-delay: 7.5s;
+        }
+
+        .snow.middleground {
+            background-image: url(./imgs/middleground.png);
+            animation-duration: 20s;
+        }
+
+        .snow.middleground.layered {
+            animation-delay: 10s;
+        }
+
+        .snow.background {
+            background-image: url(./imgs/background.png);
+            animation-duration: 30s;
+        }
+
+        .snow.background.layered {
+            animation-delay: 15s;
+        }
+
+        @keyframes snow {
+            0% {
+                transform: translate3d(0, -100%, 0);
+            }
+
+            100% {
+                transform: translate3d(15%, 100%, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <div class="wrap">
+            <div class="hat">
+                <div class="part-1"></div>
+                <div class="part-2"></div>
+            </div>
+            <div class="face">
+                <div class="eyes"></div>
+                <div class="nose"></div>
+                <div class="beard">
+                    <div class="mouth"></div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- 雪 -->
+        <div class="snow foreground"></div>
+        <div class="snow foreground layered"></div>
+        <div class="snow middleground"></div>
+        <div class="snow middleground layered"></div>
+        <div class="snow background"></div>
+        <div class="snow background layered"></div>
+    </div>
+</body>
+
+</html>
